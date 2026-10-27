@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "name": "Delta Code Hub — Garena",
+  "version": "1.0.0",
+  "description": "Điền lần lượt mã Delta Force trên trang đổi mã Garena.",
+  "permissions": [
+    "storage",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://redeem.df.garena.sg/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://redeem.df.garena.sg/*"
+      ],
+      "js": [
+        "redeem.js"
+      ]
+    },
+    {
+      "matches": [
+        "https://duongstark.github.io/delta-force-garena-code-hub/*",
+        "https://delta-garena-code-hub.blond-otter-3029.chatgpt.site/*",
+        "http://localhost:4173/*",
+        "http://127.0.0.1:4173/*"
+      ],
+      "js": [
+        "bridge.js"
+      ]
+    }
+  ]
+}
